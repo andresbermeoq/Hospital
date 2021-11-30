@@ -16,15 +16,16 @@
 	box-shadow: 7px 13px 37px #000;
 }
 body{
-	background: url("https://i.imgur.com/HgflTDf.jpg");
+	background: url("https://post.healthline.com/wp-content/uploads/2020/08/Doctors_For_Men-732x549-thumbnail.jpg");
 	background-size: cover;
+	
 }
 
 
 .form-register{
 	width: 400px;
 	background: #24303c;
-	padding: 30px;
+	padding: 20px;
 	margin: auto;
 	margin-top: 100px;
 	border-radius: 4px;
@@ -177,4 +178,4 @@ form.example::after {
   content: "";
   clear: both;
   display: table;
-
+}
