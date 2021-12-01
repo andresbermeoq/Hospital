@@ -19,7 +19,7 @@ import ec.edu.ups.model.Persona;
  * Servlet Filter implementation class Filtro
  */
 @WebFilter({"/Filtro","/CerrarSesionServlet",})
-public class Filtro implements Filter {
+public class FiltroDoctor implements Filter {
 	
 	private PersonaDAO personaDAO;
 	private Persona persona;
@@ -27,7 +27,7 @@ public class Filtro implements Filter {
     /**
      * Default constructor. 
      */
-    public Filtro() {
+    public FiltroDoctor() {
         // TODO Auto-generated constructor stub
     }
 

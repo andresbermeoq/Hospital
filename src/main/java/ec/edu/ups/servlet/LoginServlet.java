@@ -37,15 +37,9 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-=======
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.html");
 		rd.forward(request, response);
->>>>>>> 5457bd86c9a9c0a3da6b05cfd426211fe34a122a
 	}
 
 	/**
