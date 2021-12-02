@@ -1,5 +1,7 @@
 package ec.edu.ups.dao;
 
-public interface DoctorDao {
+import ec.edu.ups.model.Doctor;
+
+public interface DoctorDao extends GenericDAO<Doctor, String> {
 
 }
