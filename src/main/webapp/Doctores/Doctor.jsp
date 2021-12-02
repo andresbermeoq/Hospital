@@ -7,8 +7,10 @@
 <title>Doctor</title>
 </head>
 <body>
-			<div id="container">
+		<div id="container">
         <div id="container">
+        
+        <h1>Doctor</h1>
         <form>
             <!-- idPersona -->
             <label for="name">idPersona:</label>
