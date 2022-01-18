@@ -24,15 +24,15 @@
 <th>rol</th>
 </tr>
 <tbody>
-<c:forEach var="listarpersonas" items="${perosnaslist}">
+<c:forEach var="listarpersonas" items="${Persona}">
 <tr>
-<td>${usuario.nombre} </td>
-<td>${usuario.apellido} </td>
-<td>${usuario.cedula} </td>
-<td>${usuario.direccion} </td>
-<td>${usuario.telefono} </td>
-<td>${usuario.correo} </td>
-<td>${usuario.rol} </td>
+<td>${persona.nombre} </td>
+<td>${persona.apellido} </td>
+<td>${persona.cedula} </td>
+<td>${persona.direccion} </td>
+<td>${persona.telefono} </td>
+<td>${persona.correo} </td>
+<td>${persona.rol} </td>
 </tr>
 </c:forEach>
 </tbody>
