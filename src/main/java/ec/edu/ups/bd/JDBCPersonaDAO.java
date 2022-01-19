@@ -80,9 +80,11 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 										 resultSet.getString("telefono"), resultSet.getString("correo"), 
 										 resultSet.getString("rol"), resultSet.getString("password"))
 							);
+				System.out.println("error"+usuarios);
 			}
 		} catch (SQLException e) {
 			System.out.println(">>>WARNING (JDBCPersonaDAO:allMedico): " + e.getMessage());
+			
 		}
 		return usuarios;
 	}
