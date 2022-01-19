@@ -24,6 +24,7 @@
 <th>rol</th>
 </tr>
 <tbody>
+<form action="/Hospital/ListarPersona"method="get">
 <c:forEach var="listarpersonas" items="${Persona}">
 <tr>
 <td>${persona.nombre} </td>
@@ -35,6 +36,8 @@
 <td>${persona.rol} </td>
 </tr>
 </c:forEach>
+</form>
+
 </tbody>
 </table>
 

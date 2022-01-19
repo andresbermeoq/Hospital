@@ -17,13 +17,13 @@ import ec.edu.ups.model.Persona;
  * Servlet implementation class Listar
  */
 @WebServlet("/Listar")
-public class Listar extends HttpServlet {
+public class ListarPersona extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Listar() {
+    public ListarPersona() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,28 +33,20 @@ public class Listar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
 		String cedula=request.getParameter("cedula");
 		PersonaDAO personadao=FactoryDAO.getFactoryDAO().getPersonaDAO();
 		String url;
 		try {
 			//Persona persona=personadao.read(cedula);
-			List<Persona>lisarpersona=personadao.find();
-			List<Persona>lisarpersona1=personadao.allAdmin();
-			List<Persona>lisarpersona2=personadao.allMedico();
-			List<Persona>lisarpersona3=personadao.allSecretaria();
-			request.setAttribute("Persona", lisarpersona);
-			request.setAttribute("Admin", lisarpersona1);
-			request.setAttribute("Medico", lisarpersona2);
-			request.setAttribute("Secretaria", lisarpersona3);
+			List<Persona>listarPersona=personadao.find();
+			//List<Persona>lisarpersona1=personadao.allAdmin();
+			//<Persona>lisarpersona2=personadao.allMedico();
+			//<Persona>lisarpersona3=personadao.allSecretaria();
+			request.setAttribute("Persona", listarPersona);
+			//.setAttribute("Admin", lisarpersona1);
+			//request.setAttribute("Medico", lisarpersona2);
+			//request.setAttribute("Secretaria", lisarpersona3);
+			System.out.println("Error"+listarPersona);
 			url="/listar.jsp";
 		} catch (Exception e) {
 			url="/listar.jsp";
@@ -63,6 +55,15 @@ public class Listar extends HttpServlet {
 			// TODO: handle exception
 		}
 		getServletContext().getRequestDispatcher(url).forward(request,response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+
 
 	}
 

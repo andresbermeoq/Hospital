@@ -47,7 +47,7 @@ public class FiltroGeneral implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		
-		if (session.getAttribute("persona")!=null) {
+		/*if (session.getAttribute("persona")!=null) {
 			try {
 				Persona temporalPersona = new Persona();
 				temporalPersona = (Persona)session.getAttribute("persona");
@@ -63,14 +63,14 @@ public class FiltroGeneral implements Filter {
 		}else {
 			((HttpServletResponse)response).sendRedirect("/Hospital/index.html");
 			session.invalidate();
-		}
+		}*/
 	}
 
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("Filtro General");
+		//System.out.println("Filtro General");
 	}
 
 }
