@@ -49,11 +49,10 @@ public class ListarPersona extends HttpServlet {
 			List<Persona>listarPersona=personadao.find();
 			request.setAttribute("Persona", listarPersona);
 			
-			System.out.println("Error"+listarPersona);
+			
 			url="/Listar.jsp";
 		} catch (Exception e) {
 			url="/Listar.jsp";
-			System.out.println("Error en la lista");
 			System.out.println(e.getMessage());
 			// TODO: handle exception
 		}
