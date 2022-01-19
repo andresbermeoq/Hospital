@@ -70,7 +70,7 @@ public class FiltroGeneral implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("Filtro General");
+		//System.out.println("Filtro General");
 	}
 
 }
