@@ -46,15 +46,9 @@ public class ListarPersona extends HttpServlet {
 		PersonaDAO personadao=FactoryDAO.getFactoryDAO().getPersonaDAO();
 		String url;
 		try {
-			//Persona persona=personadao.read(cedula);
 			List<Persona>listarPersona=personadao.find();
-			//List<Persona>lisarpersona1=personadao.allAdmin();
-			//<Persona>lisarpersona2=personadao.allMedico();
-			//<Persona>lisarpersona3=personadao.allSecretaria();
 			request.setAttribute("Persona", listarPersona);
-			//.setAttribute("Admin", lisarpersona1);
-			//request.setAttribute("Medico", lisarpersona2);
-			//request.setAttribute("Secretaria", lisarpersona3);
+			
 			System.out.println("Error"+listarPersona);
 			url="/Listar.jsp";
 		} catch (Exception e) {
