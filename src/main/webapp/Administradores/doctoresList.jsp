@@ -39,15 +39,15 @@
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/Hospital/Administradores/pacientesList.jsp"
-					onclick="showAtRight('/Hospital/Administradores/pacientesList.jsp')"><i
+				<li><a href="pacientesList.jsp"
+					onclick="showAtRight('pacientesList.jsp')"><i
 						class="fa fa-users"></i> Lista de Pacientes</a></li>
-				<li><a href="/Hospital/Administradores/doctoresList.jsp"
-					onclick="showAtRight('/Hospital/Administradores/doctoresList.jsp')"><i
+				<li><a href="doctoresList.jsp"
+					onclick="showAtRight('doctoresList.jsp')"><i
 						class="fa fa-list-alt"></i> Lista de Doctores</a></li>
-				<li><a href="/Hospital/Administradores/pacientesList.jsp"
-					onclick="showAtRight('/Hospital/Administradores/secretariasList.jsp')"><i
-						class="fa fa-list"></i> Lista de Secretarias</a></li>
+				<li><a href="secretariasList.jsp"
+					onclick="showAtRight('secretariasList.jsp')"><i
+						class="fa fa-list"></i> Lista de Pacientes</a></li>
 				<li><a href="/Hospital/CerrarSesion">Cerrar Sesion</a></li>
 			</ul>
 
@@ -65,6 +65,8 @@
 			<h4>
 				<strong>Usuario: <%=session.getAttribute("persona")%></strong><br>
 				<br>
+				
+				<h1>Lista de Doctores</h1>
 			</h4>
 
 		</div>

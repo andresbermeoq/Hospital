@@ -40,10 +40,6 @@ public class LoginServlet extends HttpServlet {
 		request.getRequestDispatcher("/index.html").forward(request, response);
 		HttpSession session = request.getSession(true);
 		System.out.println("Session GET: " + session);
-		/*
-		 * if (request.getParameter("CerrarSesionServlet") != null) {
-		 * session.invalidate(); response.sendRedirect("/index.jsp"); }
-		 */
 	}
 
 	/**
@@ -64,18 +60,8 @@ public class LoginServlet extends HttpServlet {
 			if (persona.getPassword().equals(password) && persona.getCorreo().equals(email)) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute("persona", persona);
-				
-				if (persona.getRol().equals("Doctor")) {
-					url = "/Doctores/Doctor.jsp";
-				}
-				if (persona.getRol().equals("Secretaria")) {
-					url = "/Secretarias/homeSecretaria.jsp";
-				}
 				if (persona.getRol().equals("Administrador")) {
 					url = "/Administradores/index.jsp";
-				}
-				if (persona.getRol().equals("Paciente")) {
-					url = "/Pacientes/homePaciente.jsp";
 				}
 				break;
 			} else {
