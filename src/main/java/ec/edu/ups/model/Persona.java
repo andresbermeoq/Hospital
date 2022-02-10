@@ -15,13 +15,24 @@ public class Persona implements Serializable{
 	private String correo;
 	private String rol;
 	private String password;
+	private String estado;
 	
 	public Persona() {
 			
 	}
 
+
+	@Override
+	public String toString() {
+		return "Persona [IDPersona=" + IDPersona + ", cedula=" + cedula + ", apellidos=" + apellidos + ", nombres="
+				+ nombres + ", direccion=" + direccion + ", telefono=" + telefono + ", correo=" + correo + ", rol="
+				+ rol + ", password=" + password + ", estado=" + estado + "]";
+	}
+
+
+
 	public Persona(Integer iDPersona, String cedula, String apellidos, String nombres, String direccion,
-			String telefono, String correo, String rol, String password) {
+			String telefono, String correo, String rol, String password, String estado) {
 		super();
 		IDPersona = iDPersona;
 		this.cedula = cedula;
@@ -32,7 +43,10 @@ public class Persona implements Serializable{
 		this.correo = correo;
 		this.rol = rol;
 		this.password = password;
+		this.estado = estado;
 	}
+
+
 
 	public Integer getIDPersona() {
 		return IDPersona;
@@ -105,13 +119,15 @@ public class Persona implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	@Override
-	public String toString() {
-		return "Persona [IDPersona=" + IDPersona + ", cedula=" + cedula + ", apellidos=" + apellidos + ", nombres="
-				+ nombres + ", direccion=" + direccion + ", telefono=" + telefono + ", correo=" + correo + ", rol="
-				+ rol + ", "+ password +" ]";
+
+	public String getEstado() {
+		return estado;
 	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	
 
 }

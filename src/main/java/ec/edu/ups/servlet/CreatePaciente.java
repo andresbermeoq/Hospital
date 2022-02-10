@@ -58,6 +58,7 @@ String url;
 			persona.setCorreo(request.getParameter("correo"));
 			persona.setRol("Paciente");
 			persona.setPassword(request.getParameter("password"));
+			persona.setEstado("Creado");
 			
 			personaDAO.create(persona);
 			

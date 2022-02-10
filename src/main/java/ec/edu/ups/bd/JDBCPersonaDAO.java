@@ -18,7 +18,7 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 
 	@Override
 	public void create(Persona entity) {
-		connection.insertBD("INSERT INTO public.\"Persona\"(cedula, nombres, apellidos, direccion, telefono, correo, rol, password)\n"
+		connection.insertBD("INSERT INTO public.\"Persona\"(cedula, nombres, apellidos, direccion, telefono, correo, rol, password, estado)\n"
 				+ "	VALUES ("
 				+ "'" + entity.getCedula() + "', "
 				+ "'" + entity.getNombres() +"', "
@@ -27,7 +27,8 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 				+ "'" + entity.getTelefono() + "', "
 				+ "'" + entity.getCorreo() + "' , "
 				+ "'" + entity.getRol() + "' , "	
-				+ "'" + entity.getPassword() + "');");
+				+ "'" + entity.getPassword() + "', "
+				+ "'" + entity.getEstado() + "');");
 	}
 
 	@Override
@@ -39,8 +40,9 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 		try {
 			if (resultSet != null && resultSet.next()) {
 				persona = new Persona(resultSet.getInt("id_persona"), resultSet.getString("cedula"), resultSet.getString("apellidos"), 
-									resultSet.getString("nombres"), resultSet.getString("direccion"), resultSet.getString("telefono"),
-									resultSet.getString("correo"), resultSet.getString("rol"), resultSet.getString("password")
+									  resultSet.getString("nombres"), resultSet.getString("direccion"), resultSet.getString("telefono"),
+									  resultSet.getString("correo"), resultSet.getString("rol"), resultSet.getString("password"),
+									  resultSet.getString("estado")
 						);
 			}
 		} catch (SQLException e) {
@@ -78,11 +80,14 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 				usuarios.add(new Persona(resultSet.getInt("id_persona"), resultSet.getString("cedula"), resultSet.getString("nombres"), 
 										 resultSet.getString("apellidos"), resultSet.getString("direccion"), 
 										 resultSet.getString("telefono"), resultSet.getString("correo"), 
-										 resultSet.getString("rol"), resultSet.getString("password"))
+										 resultSet.getString("rol"), resultSet.getString("password"), resultSet.getString("estado"))
 							);
+				
+				
 			}
 		} catch (SQLException e) {
 			System.out.println(">>>WARNING (JDBCPersonaDAO:allMedico): " + e.getMessage());
+			
 		}
 		return usuarios;
 	}
@@ -97,7 +102,8 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 			if (resultSet != null && resultSet.next()) {
 				persona = new Persona(resultSet.getInt("id_persona"), resultSet.getString("cedula"), resultSet.getString("apellidos"), 
 									resultSet.getString("nombres"), resultSet.getString("correo"), resultSet.getString("direccion"),
-									resultSet.getString("telefono"), resultSet.getString("rol"), resultSet.getString("password")
+									resultSet.getString("telefono"), resultSet.getString("rol"), resultSet.getString("password"),
+									resultSet.getString("estado")
 						);
 			}
 		} catch (SQLException e) {
@@ -116,9 +122,10 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 		try {
 			while (resultSet.next()) {
 				secretarias.add(new Persona(resultSet.getInt("id_persona"), resultSet.getString("cedula"), resultSet.getString("nombres"), 
-										 resultSet.getString("apellidos"), resultSet.getString("direccion"), 
-										 resultSet.getString("telefono"), resultSet.getString("correo"), 
-										 resultSet.getString("rol"), resultSet.getString("password"))
+										    resultSet.getString("apellidos"), resultSet.getString("direccion"), 
+										    resultSet.getString("telefono"), resultSet.getString("correo"), 
+										    resultSet.getString("rol"), resultSet.getString("password"),
+										    resultSet.getString("estado"))
 							);
 			}
 		} catch (SQLException e) {
@@ -139,7 +146,8 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 				doctores.add(new Persona(resultSet.getInt("id_persona"), resultSet.getString("cedula"), resultSet.getString("nombres"), 
 										 resultSet.getString("apellidos"), resultSet.getString("direccion"), 
 										 resultSet.getString("telefono"), resultSet.getString("correo"), 
-										 resultSet.getString("rol"), resultSet.getString("password"))
+										 resultSet.getString("rol"), resultSet.getString("password"),
+										 resultSet.getString("estado"))
 							);
 			}
 		} catch (SQLException e) {
@@ -160,7 +168,8 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 				administradores.add(new Persona(resultSet.getInt("id_persona"), resultSet.getString("cedula"), resultSet.getString("nombres"), 
 										 resultSet.getString("apellidos"), resultSet.getString("direccion"), 
 										 resultSet.getString("telefono"), resultSet.getString("correo"), 
-										 resultSet.getString("rol"), resultSet.getString("password"))
+										 resultSet.getString("rol"), resultSet.getString("password"),
+										 resultSet.getString("estado"))
 							);
 			}
 		} catch (SQLException e) {

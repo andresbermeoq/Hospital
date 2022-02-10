@@ -3,7 +3,6 @@ package ec.edu.ups.servlet;
 import java.io.IOException;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,6 +58,7 @@ public class CreateUser extends HttpServlet {
 			persona.setCorreo(request.getParameter("correo"));
 			persona.setRol(request.getParameter("rol"));
 			persona.setPassword(GeneratePassword.generateRandomPassword(5));
+			persona.setEstado("Creado");
 			
 			personaDAO.create(persona);
 			
